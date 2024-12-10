@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>¡Bienveido!</title>
+    <style>
+        h1 {
+            color: blue;
+            text-align: center;
+            font-weight: bold;
+            font-size: 48px;
+        }
+
+        .tabla {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .banner {
+            width: 80%;
+            height: 210px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        table {
+            border-spacing: 0 12px;
+            border-collapse: separate; /* para que no colapsen los bordes */
+        }
+    </style>
+</head>
+
+<body>
+<img src="img/banner.jpg" alt="imagen de un paquete entregado" class="banner">
+<h1 class="titulo_principal">Formulario de retirada de paquetes</h1>
+<form class="tabla" action="../RetirarPaqueteServlet" method="POST">
+    <table>
+        <tr>
+            <td>
+                <label>Codigo del paquete: </label>
+                <input type="text" name="CPorigen">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Retirar Paquete</button>
+            </td>
+        </tr>
+    </table>
+
+</form>
+</body>
+</html>
