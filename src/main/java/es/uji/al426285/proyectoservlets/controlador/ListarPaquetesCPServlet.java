@@ -10,12 +10,12 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import jakarta.servlet.ServletException;
 import org.json.simple.JSONArray;
-
+//mensajero
 
 @WebServlet(name = "ListarPaquetesCPServlet", value = "/ListarPaquetesCPServlet")
 public class ListarPaquetesCPServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //obtenemos el gestor del context
         ServletContext context = getServletContext();
         GestorPaquetes gestor = (GestorPaquetes) context.getAttribute("gestor");

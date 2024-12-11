@@ -6,6 +6,7 @@
 
     <groupId>es.uji.al426285</groupId>
     <artifactId>ProyectoServlets</artifactId>
+    <version>1.0.0</version>
     <name>ProyectoServlets</name>
     <packaging>war</packaging>
 
