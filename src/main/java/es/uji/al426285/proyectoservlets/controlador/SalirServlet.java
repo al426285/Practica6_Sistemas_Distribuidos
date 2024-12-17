@@ -11,10 +11,12 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 
 @WebServlet(name = "SalirServlet", value = "/SalirServlet")
 public class SalirServlet extends HttpServlet {
+    private static final Logger logger = Logger.getLogger(ServletAcceso.class.getName());
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -24,12 +26,17 @@ public class SalirServlet extends HttpServlet {
         //hacemos la operacion que corresponde con el gestor
         gestor.guardaDatos();
 
-        String id = (String) request.getAttribute("identificador");
         HttpSession session = request.getSession();
-        session.setAttribute("identificador", id);
+        String id= (String) session.getAttribute("identificador");
+        logger.info("ID--> "+id);
+        request.setAttribute("id",id);
 
         //Redirigimos la solicitud al inicio
-        RequestDispatcher vista = request.getRequestDispatcher("index.html");
+        RequestDispatcher vista = request.getRequestDispatcher("Bienvenida.jsp");
         vista.forward(request, response);
+
+        if (session != null) {
+            session.invalidate();  // Destruye la sesión, borrando todos los atributos
+        }
     }
 }

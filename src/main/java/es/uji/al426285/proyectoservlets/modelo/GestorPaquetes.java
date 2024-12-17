@@ -1,5 +1,6 @@
 package es.uji.al426285.proyectoservlets.modelo;
 
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -47,6 +48,10 @@ public class GestorPaquetes {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public String toString(){
+        return mapa.toString();
     }
 
 
@@ -131,8 +136,10 @@ public class GestorPaquetes {
             JSONArray array = (JSONArray) parser.parse(is);
             // Rellena los datos del diccionario en memoria a partir del JSONArray
             rellenaDiccionario(array);
-        } catch (Exception e) {//por si acaso, meter Exception e
+        } catch (ParseException e) {//por si acaso, meter Exception e
             e.printStackTrace();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
     }

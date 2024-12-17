@@ -10,40 +10,44 @@
             text-align: center;
             font-weight: bold;
             font-size: 48px;
+
         }
 
-        .tabla {
+        table {
             display: flex;
             align-items: center;
             justify-content: center;
         }
+        .lista{
+            display: flex;
+            justify-content: center;
+        }
 
         .banner {
-            width: 80%;
+            width: 90%;
             height: 210px;
             display: block;
             margin: 0 auto;
         }
 
-        table {
-            border-spacing: 0 12px;
-            border-collapse: separate; /* para que no colapsen los bordes */
-        }
+
     </style>
 </head>
 
 <body>
 <img src="img/banner.jpg" alt="imagen de un paquete entregado" class="banner">
 <h1 class="titulo_principal">Siempre a tiempo</h1>
-    <table>
+<table>
+    <div class="lista">
         <ul>
-            <li><a href="../SalirServlet">Salir</a></li> <!-- funciona como un get-->
-            <li><a href="../ListarPaquetesServlet">Listar los paquetes enviados</a></li>
+            <li><a href="SalirServlet">Salir</a></li> <!-- funciona como un get-->
+            <li><a href="ListarPaquetesServlet">Listar los paquetes enviados</a></li>
             <li><a href="EnviarPaqueteServlet">Enviar un paquete</a></li>
             <li><a href="ModificarPaqueteServlet">Modificar un paquete</a></li>
             <li><a href="RetirarPaqueteServlet">Retirar un paquete</a></li>
         </ul>
-    </table>
+    </div>
+</table>
 
 </form>
 </body>

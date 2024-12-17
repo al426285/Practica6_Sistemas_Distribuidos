@@ -11,11 +11,12 @@
     <title>Hasta pronto</title>
 </head>
 <body>
-<h3> Hasta luego <%=request.getAttribute("identificador")%>
+<h3> Hasta luego <%=request.getAttribute("id")%>
 </h3>
 <h3>
     Te estaremos esperando
 </h3>
-</p1>
+<a href="ServletAcceso">Inicio</a>
+
 </body>
 </html>

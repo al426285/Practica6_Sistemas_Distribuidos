@@ -28,9 +28,16 @@ public class ListarPaquetesServlet extends HttpServlet {
         //hacemos la operacion que corresponde con el gestor
         JSONArray array= gestor.listaPaquetesCliente(codcli);
         ArrayList<String> res=new ArrayList<>();
-        for (Object obj:array){
+        System.out.println("Soy el cliente "+codcli+", mi lista es--> "+array.toJSONString());
+        //System.out.println("--mapa completo--> "+gestor.toString());
+        for (Object obj:array.toArray()){
+         //   System.out.println("<---objetoX--"+obj.toString());
+         //   System.out.println("--objetoxx->"+obj);
             res.add(obj.toString());
         }
+
+        System.out.println("----> "+res.toString());
+
         //lo guardamos para recuperarlo en el jsp
         request.setAttribute("resultado",res);
 
