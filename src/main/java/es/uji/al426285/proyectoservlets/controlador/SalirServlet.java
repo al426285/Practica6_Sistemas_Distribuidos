@@ -28,7 +28,7 @@ public class SalirServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
         String id= (String) session.getAttribute("identificador");
-        logger.info("ID--> "+id);
+//        logger.info("ID--> "+id);
         request.setAttribute("id",id);
 
         //Redirigimos la solicitud al inicio

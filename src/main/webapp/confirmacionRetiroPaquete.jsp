@@ -9,7 +9,7 @@
 <br/>
 <% boolean exito = Boolean.parseBoolean(request.getAttribute("exito").toString());
     if(exito){%>
-<h3>Enhorabuena, <%=request.getAttribute("codCliente")%> </h3>
+<h1>Enhorabuena, <%=request.getAttribute("codCliente")%> </h1>
 <h2>Has retirado el siguiente paquete:</h2>
 <ul>
     <li>codPaquete:  <%=request.getAttribute("codPaquete")%> </li>

@@ -21,7 +21,7 @@
 <h2>
     Te estaremos esperando
 </h2>
-<a href="ServletAcceso">Inicio</a>
+<a style="font-size: 18px" href="ServletAcceso">Inicio</a>
 
 </body>
 </html>

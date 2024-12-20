@@ -37,17 +37,14 @@ public class ListarPaquetesCPServlet extends HttpServlet {
         String cpDestino=request.getParameter("codPostal");
         //hacemos la operacion que corresponde con el gestor
         JSONArray array = gestor.listaPaquetesCP(cpDestino);
-        logger.info("GESTOR----> "+gestor.toString());
-        logger.info("array----> "+array.toString());
+//        logger.info("GESTOR----> "+gestor.toString());
+//        logger.info("array----> "+array.toString());
         ArrayList<String> res = new ArrayList<>();
         for (Object obj : array) {
             res.add(obj.toString());
-            logger.info("EEEEEE---> "+obj.toString());
         }
-        logger.info("mmmmm--> "+array.toJSONString());
         //lo guardamos para recuperarlo en el jsp
         request.setAttribute("resultado", res);
-        logger.info("Resultado obtenido de listarpaquetescp para el cp="+cpDestino+" es el siguiente---> "+res.toString());
         //Redirigimos la solicitud al inicio
         RequestDispatcher vista = request.getRequestDispatcher("listadoPaquetesCP.jsp");
         vista.forward(request, response);

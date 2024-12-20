@@ -10,7 +10,7 @@
 <% boolean exito = Boolean.parseBoolean(request.getAttribute("exito").toString());
     if(exito){%>
 <h1>Enhorabuena, <%=request.getAttribute("codCliente")%> </h1>
-<h2>Has modificado correctamente el siguiente paquete (nuevos valores):</h2>
+<h2>Has modificado correctamente el siguiente paquete con sus respectivas características :</h2>
 <ul>
     <li>codPaquete:  <%=request.getAttribute("codPaquete")%> </li>
     <li>CPOrigen:  <%=request.getAttribute("CPorigen")%> </li>
@@ -20,7 +20,8 @@
 </ul>
 <%}
 else{%>
-Lo lamentamos, <%=request.getAttribute("codCliente")%>, no se ha podido modificar el paquete <%=request.getAttribute("codPaquete")%>
+<h2>
+Lo lamentamos, <%=request.getAttribute("codCliente")%>, no se ha podido modificar el paquete <%=request.getAttribute("codPaquete")%></h2>
 <% }
 %>
 

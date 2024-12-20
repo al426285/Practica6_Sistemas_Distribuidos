@@ -29,7 +29,7 @@ public class ModificarPaqueteServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
         String id = (String) session.getAttribute("identificador");
-        logger.info("Por aqui modificar, cliente--> "+id);
+//        logger.info("Por aqui modificar, cliente--> "+id);
         String CPorigen = (String) request.getParameter("CPorigen");
         String CPdestino = (String) request.getParameter("CPdestino");
         double peso = Double.parseDouble(request.getParameter("peso"));
@@ -38,8 +38,8 @@ public class ModificarPaqueteServlet extends HttpServlet {
 
         JSONObject res = gestor.modificaPaquete(id, codPaquete, CPorigen, CPdestino, peso);
 
-        logger.info("Por aqui modificar, resultado para--> "+codPaquete+CPorigen+CPdestino+peso);
-        logger.info("Resultado final-->"+res);
+//        logger.info("Por aqui modificar, resultado para--> "+codPaquete+CPorigen+CPdestino+peso);
+//        logger.info("Resultado final-->"+res);
 
         CPorigen = (String) res.get("CPOrigen");
         CPdestino = (String) res.get("CPDestino");
@@ -50,7 +50,6 @@ public class ModificarPaqueteServlet extends HttpServlet {
         }
 
         if (!res.isEmpty()) {
-            logger.info("No esta vacia, trueee");
             request.setAttribute("exito", true);
             String fecha =  (String) res.get("fechaEnvio");
             request.setAttribute("CPorigen", CPorigen);

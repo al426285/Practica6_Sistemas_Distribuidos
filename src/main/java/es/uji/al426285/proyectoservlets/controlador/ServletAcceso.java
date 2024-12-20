@@ -21,13 +21,11 @@ public class ServletAcceso extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        logger.info("EJECUTANDO INIT DE SERVLETACCESO");
         ServletContext context = getServletContext();
         GestorPaquetes gestorPaquetes = (GestorPaquetes) context.getAttribute("gestor");
         if (gestorPaquetes == null) {
             gestorPaquetes = new GestorPaquetes(); // Crear uno nuevo si es null
             context.setAttribute("gestor", gestorPaquetes);
-            logger.info("Mapa recien creado---> "+gestorPaquetes.toString());
         }
 
 //        logger.info("Entrando en el método init");
@@ -37,7 +35,6 @@ public class ServletAcceso extends HttpServlet {
         // si no funciona, guardar el id aqui
 
     }
-    //private AtomicInteger intentos=new AtomicInteger(0);
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         RequestDispatcher vista= request.getRequestDispatcher("index.html"); //Redirige la solicitud a una vista JSP:
@@ -46,23 +43,19 @@ public class ServletAcceso extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        response.setContentType("text/html");//tipo de respuest
-        logger.info("EJECUTANDO DOGET DE SERVLETACCESO");
         ServletContext context = getServletContext();
         GestorPaquetes gestorPaquetes = (GestorPaquetes) context.getAttribute("gestor");
         if (gestorPaquetes == null) {
             gestorPaquetes = new GestorPaquetes(); // Crear uno nuevo si es null
             context.setAttribute("gestor", gestorPaquetes);
-            logger.info("Mapa recien creado---> "+gestorPaquetes.toString());
         }
 
-        logger.info("Entrando en el método doGet");
         //guardamos el identificador
         String id = (String) request.getParameter("codId");
         HttpSession session = request.getSession(true);//parametro true
         session.removeAttribute("identificador");
         session.setAttribute("identificador", id);
 
-        logger.info("EL CLIENTES ES-----> "+id);
         String tipo=request.getParameter("tipo");//miramos el tipo {cliente o mensajero}
         if ("codCliente".equals(tipo)){
             RequestDispatcher vista= request.getRequestDispatcher("menuCliente.html");
