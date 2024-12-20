@@ -9,13 +9,18 @@
 <html>
 <head>
     <title>Hasta pronto</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<h3> Hasta luego <%=request.getAttribute("id")%>
-</h3>
-<h3>
+<h2> Hasta luego <%=request.getAttribute("id")%>
+</h2>
+<h2>
     Te estaremos esperando
-</h3>
+</h2>
 <a href="ServletAcceso">Inicio</a>
 
 </body>

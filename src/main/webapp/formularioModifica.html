@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>¡Bienveido!</title>
+    <title>Modifica un paquete</title>
     <style>
         h1 {
             color: blue;
@@ -13,7 +13,6 @@
         }
 
         .tabla {
-            text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -30,40 +29,49 @@
             border-spacing: 0 12px;
             border-collapse: separate; /* para que no colapsen los bordes */
         }
+        .boton{
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
 <img src="img/banner.jpg" alt="imagen de un paquete entregado" class="banner">
-<h1 class="titulo_principal">Formulario de retirada de paquetes</h1>
-<form class="tabla" action="../ModificarPaqueteServlet" method="POST">
+<h1 class="titulo_principal">Formulario de modificación de paquetes</h1>
+<form class="tabla" action="ModificarPaqueteServlet" method="POST">
     <table>
         <tr>
             <td>
                 <label>Codigo del paquete:</label>
-                <input type="text" name="codPaquete">
+            </td>
+            <td>
+                <input type="number" name="codPaquete">
             </td>
         </tr>
         <tr>
             <td>
                 <label>CPorigen:</label>
-                <input type="text" name="CPorigen">
             </td>
+            <td><input type="number" name="CPorigen"></td>
         </tr>
         <tr>
             <td>
                 <label>CPdestino: </label>
-                <input type="text" name="CPdestino">
+
+            </td>
+            <td>
+                <input type="number" name="CPdestino">
             </td>
         </tr>
         <tr>
             <td>
-                <label>peso: </label>
-                <input type="text" name="peso">
+                <label>Peso: </label>
+
             </td>
+            <td><input type="number" name="peso" min="1"></td>
         </tr>
         <tr>
-            <td>
+            <td class="boton" colspan="2">
                 <button type="submit">Modificar Paquete</button>
             </td>
         </tr>

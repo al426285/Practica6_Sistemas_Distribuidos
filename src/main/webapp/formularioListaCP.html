@@ -35,22 +35,23 @@
 
 <body>
 <img src="img/banner.jpg" alt="imagen de un paquete entregado" class="banner">
-<h1 class="titulo_principal">Formulario de retirada de paquetes</h1>
-<form class="tabla" action="RetirarPaqueteServlet" method="POST">
+<h1 class="titulo_principal">Listado de paquetes</h1>
+<form class="tabla" action="ListarPaquetesCPServlet"  method="POST">
     <table>
         <tr>
             <td>
-                <label>Codigo del paquete: </label>
-                <input type="number" name="codPaquete">
+                <label>Código postal: </label>
+                <input type="number" name="codPostal" >
             </td>
         </tr>
         <tr>
             <td>
-                <button type="submit">Retirar Paquete</button>
+                <button type="submit">Listar</button>
             </td>
         </tr>
     </table>
 
 </form>
 </body>
+
 </html>

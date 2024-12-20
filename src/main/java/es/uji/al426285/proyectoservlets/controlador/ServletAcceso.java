@@ -10,12 +10,14 @@ import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import jakarta.servlet.ServletException;
-
+////////////////////////////////////////////////////////////////
+//BARAJAR LA OPCION DEL DOPOST, SOLO ESTOY USANDO EL DOGET
+//////////////////////////////////////////////////////////
 
 @WebServlet(name = "ServletAcceso", value = "/ServletAcceso")
 public class ServletAcceso extends HttpServlet {
     //aqui hacemos esto al principio para que todos compartan el mismo gestor
-    private static final Logger logger = Logger.getLogger(ServletAcceso.class.getName());
+    public static final Logger logger = Logger.getLogger(ServletAcceso.class.getName());
 
     @Override
     public void init() throws ServletException {
@@ -37,7 +39,12 @@ public class ServletAcceso extends HttpServlet {
     }
     //private AtomicInteger intentos=new AtomicInteger(0);
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        RequestDispatcher vista= request.getRequestDispatcher("index.html"); //Redirige la solicitud a una vista JSP:
+        vista.forward(request,response);
+    }
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        response.setContentType("text/html");//tipo de respuest
         logger.info("EJECUTANDO DOGET DE SERVLETACCESO");
         ServletContext context = getServletContext();
@@ -52,9 +59,10 @@ public class ServletAcceso extends HttpServlet {
         //guardamos el identificador
         String id = (String) request.getParameter("codId");
         HttpSession session = request.getSession(true);//parametro true
-        //session.removeAttribute("identificador");
+        session.removeAttribute("identificador");
         session.setAttribute("identificador", id);
 
+        logger.info("EL CLIENTES ES-----> "+id);
         String tipo=request.getParameter("tipo");//miramos el tipo {cliente o mensajero}
         if ("codCliente".equals(tipo)){
             RequestDispatcher vista= request.getRequestDispatcher("menuCliente.html");
@@ -64,9 +72,6 @@ public class ServletAcceso extends HttpServlet {
         RequestDispatcher vista= request.getRequestDispatcher("menuMensajero.html"); //Redirige la solicitud a una vista JSP:
         vista.forward(request,response);
         }
-        else{
-            RequestDispatcher vista= request.getRequestDispatcher("index.html"); //Redirige la solicitud a una vista JSP:
-            vista.forward(request,response);
-        }
+
     }
 }

@@ -8,12 +8,12 @@
 </head>
 <body>
 <br/>
-<h3>Enhorabuena,
+<h2>Enhorabuena,
     <%=request.getAttribute("codCliente")%>, has enviado el paquete con código:
     <%=request.getAttribute("codPaquete")%>
-</h3>
+</h2>
 <br>
 <br>
-<a href="ServletAcceso">Inicio</a>
+<a href="menuCliente.html">Volver al menu...</a>
 </body>
 </html>

@@ -7,7 +7,7 @@
 </head>
 <body>
 <br/>
-<% boolean exito = Boolean.parseBoolean(request.getParameter("exito"));
+<% boolean exito = Boolean.parseBoolean(request.getAttribute("exito").toString());
     if(exito){%>
 <h3>Enhorabuena, <%=request.getAttribute("codCliente")%> </h3>
 <h2>Has retirado el siguiente paquete:</h2>
@@ -27,6 +27,6 @@ Lo lamentamos, <%=request.getAttribute("codCliente")%>, no hemos podido retirar 
 </h3>
 <br>
 <br>
-<a href="ServletAcceso">Inicio</a>
+<a href="menuCliente.html">Volver al menu...</a>
 </body>
 </html>

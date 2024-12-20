@@ -10,6 +10,8 @@ import jakarta.servlet.annotation.*;
 import jakarta.servlet.ServletException;
 import org.json.simple.JSONObject;
 
+import static es.uji.al426285.proyectoservlets.controlador.ServletAcceso.logger;
+
 //mensajero
 
 @WebServlet(name = "RecogerPaquetesServlet", value = "/RecogerPaquetesServlet")
@@ -29,10 +31,14 @@ public class RecogerPaquetesServlet extends HttpServlet {
         String id = (String) session.getAttribute("identificador");
         long codPaquete = Long.parseLong(request.getParameter("codPaquete"));
         JSONObject res = gestor.recogePaquete(codPaquete, id);
+        logger.info("Eooooo---> "+id+"-----"+codPaquete+" "+res.toString());
         if (!res.isEmpty()) {
             request.setAttribute("exito", true);
+            logger.info("trueeeee");
         } else {
             request.setAttribute("exito", false);
+            logger.info("false");
+
         }
         request.setAttribute("codPaquete", codPaquete);
         request.setAttribute("codMensajero", id);

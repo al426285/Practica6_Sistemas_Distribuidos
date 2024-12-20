@@ -4,10 +4,14 @@
 <html>
 <head>
     <title>Listado de paquetes</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<h3>Lista de paquetes enviados</h3>
-<br/>
+<h2>Lista de paquetes enviados</h2>
         <p>
                 <%
                     ArrayList<String> res = (ArrayList<String>) request.getAttribute("resultado");
@@ -24,7 +28,7 @@
 
         </p>
 
-
-<a href="ServletAcceso">Inicio</a>
+<br>
+<a href="menuCliente.html">Volver al menu...</a>
 </body>
 </html>

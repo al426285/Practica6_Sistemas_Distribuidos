@@ -4,9 +4,14 @@
 <html>
 <head>
     <title>Listado de paquetes</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<h3>Lista de paquetes enviados</h3>
+<h2>Lista de paquetes enviados</h2>
 <br/>
         <p>
                 <%
@@ -25,6 +30,6 @@
         </p>
 
 
-<a href="ServletAcceso">Inicio</a>
+<a href="menuMensajero.html">Volver al menu...</a>
 </body>
 </html>

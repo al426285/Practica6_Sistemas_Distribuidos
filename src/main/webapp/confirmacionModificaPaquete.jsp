@@ -7,10 +7,10 @@
 </head>
 <body>
 <br/>
-<% boolean exito = Boolean.parseBoolean(request.getParameter("exito"));
+<% boolean exito = Boolean.parseBoolean(request.getAttribute("exito").toString());
     if(exito){%>
-<h2>Enhorabuena, <%=request.getAttribute("codCliente")%> </h2>
-<h3>Has modificado correctamente el siguiente paquete (nuevos valores):</h3>
+<h1>Enhorabuena, <%=request.getAttribute("codCliente")%> </h1>
+<h2>Has modificado correctamente el siguiente paquete (nuevos valores):</h2>
 <ul>
     <li>codPaquete:  <%=request.getAttribute("codPaquete")%> </li>
     <li>CPOrigen:  <%=request.getAttribute("CPorigen")%> </li>
@@ -27,6 +27,6 @@ Lo lamentamos, <%=request.getAttribute("codCliente")%>, no se ha podido modifica
 </h3>
 <br>
 <br>
-<a href="ServletAcceso">Inicio</a>
+<a href="menuCliente.html">Volver al menu...</a>
 </body>
 </html>

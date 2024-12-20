@@ -4,23 +4,27 @@
 <html>
 <head>
     <title>Confirmación</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<br/>
-<h3>
-    <% boolean exito = Boolean.parseBoolean(request.getParameter("exito"));
+
+    <% boolean exito = Boolean.parseBoolean(request.getAttribute("exito").toString());
         if (exito) {%>
     <h2> Enhorabuena,
-        <%=request.getAttribute("codCliente")%>, has recogido el paquete con código:
+        <%=request.getAttribute("codMensajero")%>, has recogido el paquete con código
         <%=request.getAttribute("codPaquete")%>
     </h2>
     <% } else {%>
     <h2>Lo sentimos, el paquete  <%=request.getAttribute("codPaquete")%> no ha podido ser recogido correctamente </h2>
     <% }
     %>
-</h3>
+
 <br>
 <br>
-<a href="ServletAcceso">Inicio</a>
+<a href="menuMensajero.html">Volver al menu...</a>
 </body>
 </html>

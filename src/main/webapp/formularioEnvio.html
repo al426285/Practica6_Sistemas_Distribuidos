@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>¡Bienveido!</title>
+    <title>Envia un paquete</title>
     <style>
         h1 {
             color: blue;
@@ -17,6 +17,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
+        }
+        td{
+            text-align: center;
         }
 
         .banner {
@@ -35,8 +39,8 @@
 
 <body>
 <img src="img/banner.jpg" alt="imagen de un paquete entregado" class="banner">
-<h1 class="titulo_principal">Formulario de envía de paquetes</h1>
-<form class="tabla" action="../EnviarPaqueteServlet"  method="POST">
+<h1 class="titulo_principal">Formulario de envio de paquetes</h1>
+<form class="tabla" action="EnviarPaqueteServlet"  method="POST">
     <table>
         <tr>
             <td>
@@ -49,13 +53,13 @@
             </td>
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 <label>peso: </label>
                 <input type="number" name="peso" >
             </td>
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 <button type="submit">Enviar Paquete</button>
             </td>
         </tr>
