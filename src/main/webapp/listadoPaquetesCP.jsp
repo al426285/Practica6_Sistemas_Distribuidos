@@ -4,32 +4,32 @@
 <html>
 <head>
     <title>Listado de paquetes</title>
-    <style>
-        h2{
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+<img src="img/banner.jpg" alt="imagen de un paquete entregado" class="banner">
+
 <h2>Lista de paquetes enviados</h2>
 <br/>
-        <p>
-                <%
-                    ArrayList<String> res = (ArrayList<String>) request.getAttribute("resultado");
-                    if (res != null) {
-                %>
-                <ul>
-                    <% for (String paq : res) { %>
-                    <br> <li><%= paq %></li>
-                    <% } %>
-                </ul>
-                <% } else { %>
-                <p>No se encontraron paquetes.</p>
-                <% } %>
+<table>
+    <div class="lista">
+        <%
+            ArrayList<String> res = (ArrayList<String>) request.getAttribute("resultado");
+            if (res != null) {
+        %>
+        <ul>
+            <% for (String paq : res) { %>
+            <li><%= paq %>
+            </li>
+            <% } %>
+        </ul>
+        <% } else { %>
+        <h2>No se encontraron paquetes.</h2>
+        <% } %>
+    </div>
+</table>
 
-        </p>
-
-
-<a href="menuMensajero.html">Volver al menu...</a>
+<h3>
+    <a href="menuMensajero.html">Volver al menu...</a></h3>
 </body>
 </html>

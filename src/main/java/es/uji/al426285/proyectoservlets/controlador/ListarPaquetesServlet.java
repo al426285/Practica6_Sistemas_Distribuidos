@@ -23,6 +23,13 @@ public class ListarPaquetesServlet extends HttpServlet {
 
         //obtenemos los parametros que necesitamos
         HttpSession session = request.getSession();
+
+        //en caso de salir/invalidar la sesion que lo redirija a la pagina principal y no pueda hacer nada mas
+        if (session == null || session.getAttribute("identificador") == null) {
+            response.sendRedirect("index.html"); // Redirige al inicio de sesión
+            return;
+        }
+
         String codcli = (String) session.getAttribute("identificador");
 
         //hacemos la operacion que corresponde con el gestor

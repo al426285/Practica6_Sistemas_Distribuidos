@@ -4,13 +4,11 @@
 <html>
 <head>
     <title>Confirmación</title>
-    <style>
-        h2{
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="estilos.css">
+
 </head>
 <body>
+<img src="img/banner.jpg" alt="imagen de un paquete entregado" class="banner">
 
     <% boolean exito = Boolean.parseBoolean(request.getAttribute("exito").toString());
         if (exito) {%>
@@ -25,6 +23,7 @@
 
 <br>
 <br>
-<a href="menuMensajero.html">Volver al menu...</a>
+<h3>
+<a href="menuMensajero.html">Volver al menu...</a></h3>
 </body>
 </html>

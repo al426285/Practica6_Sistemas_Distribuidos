@@ -1,0 +1,25 @@
+body {
+    text-align: center;
+}
+
+.banner {
+    width: 90%;
+    height: 210px;
+    display: block;
+    margin: 0 auto;
+}
+
+.lista {
+    display: flex;
+    justify-content: space-evenly; /* Distribuimos de manera equitativa */
+    flex-wrap: wrap; /* para dividir una linea si excede */
+}
+
+ul {
+    list-style-position: inside;
+}
+
+li {
+    padding-top: 12px;
+    word-wrap: break-word;
+}

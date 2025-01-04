@@ -4,31 +4,34 @@
 <html>
 <head>
     <title>Listado de paquetes</title>
-    <style>
-        h2{
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="estilos.css">
+
 </head>
 <body>
+<img src="img/banner.jpg" alt="imagen de un paquete entregado" class="banner">
+
 <h2>Lista de paquetes enviados</h2>
-        <p>
+<table>
+    <div class="lista">
                 <%
                     ArrayList<String> res = (ArrayList<String>) request.getAttribute("resultado");
                     if (res != null) {
                 %>
                 <ul>
                     <% for (String paq : res) { %>
-                    <br> <li><%= paq %></li>
+                   <li><%= paq %></li>
                     <% } %>
                 </ul>
                 <% } else { %>
                 <p>No se encontraron paquetes.</p>
                 <% } %>
 
-        </p>
+    </div>
+</table>
+
 
 <br>
-<a href="menuCliente.html">Volver al menu...</a>
+<h3>
+<a href="menuCliente.html">Volver al menu...</a></h3>
 </body>
 </html>

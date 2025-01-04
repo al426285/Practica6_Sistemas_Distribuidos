@@ -18,6 +18,13 @@ import static es.uji.al426285.proyectoservlets.controlador.ServletAcceso.logger;
 public class RecogerPaquetesServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+
+        //en caso de salir/invalidar la sesion que lo redirija a la pagina principal y no pueda hacer nada mas
+        if (session == null || session.getAttribute("identificador") == null) {
+            response.sendRedirect("index.html"); // Redirige al inicio de sesión
+            return;
+        }
         RequestDispatcher vista = request.getRequestDispatcher("formularioRecoge.html");
         vista.forward(request, response);
     }

@@ -27,6 +27,13 @@ public class SalirServlet extends HttpServlet {
         gestor.guardaDatos();
 
         HttpSession session = request.getSession();
+
+        //en caso de salir/invalidar la sesion que lo redirija a la pagina principal y no pueda hacer nada mas
+        if (session == null || session.getAttribute("identificador") == null) {
+            response.sendRedirect("index.html"); // Redirige al inicio de sesión
+            return;
+        }
+
         String id= (String) session.getAttribute("identificador");
 //        logger.info("ID--> "+id);
         request.setAttribute("id",id);

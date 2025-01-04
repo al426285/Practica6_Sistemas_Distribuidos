@@ -5,15 +5,19 @@
 <html>
 <head>
     <title>Confirmación</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 <br/>
+<img src="img/banner.jpg" alt="imagen de un paquete entregado" class="banner">
+
 <h2>Enhorabuena,
     <%=request.getAttribute("codCliente")%>, has enviado el paquete con código:
     <%=request.getAttribute("codPaquete")%>
 </h2>
 <br>
 <br>
-<a href="menuCliente.html">Volver al menu...</a>
+<h3>
+<a href="menuCliente.html">Volver al menu...</a></h3>
 </body>
 </html>

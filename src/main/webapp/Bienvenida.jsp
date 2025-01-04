@@ -9,19 +9,17 @@
 <html>
 <head>
     <title>Hasta pronto</title>
-    <style>
-        h2{
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+<img src="img/banner.jpg" alt="imagen de un paquete entregado" class="banner">
 <h2> Hasta luego <%=request.getAttribute("id")%>
 </h2>
 <h2>
     Te estaremos esperando
 </h2>
+<h3>
 <a style="font-size: 18px" href="ServletAcceso">Inicio</a>
-
+</h3>
 </body>
 </html>

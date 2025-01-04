@@ -16,6 +16,12 @@ import org.json.simple.JSONObject;
 public class EnviarPaqueteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        //en caso de salir/invalidar la sesion que lo redirija a la pagina principal y no pueda hacer nada mas
+        if (session == null || session.getAttribute("identificador") == null) {
+            response.sendRedirect("index.html"); // Redirige al inicio de sesión
+            return;
+        }
 
         //Redirigimos la solicitud para que rellene con sus datos
         RequestDispatcher vista = request.getRequestDispatcher("formularioEnvio.html");
